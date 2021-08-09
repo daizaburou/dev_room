@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>カリー関数</title>
+    <link href=".././common/css/style.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+
+<style>
+</style>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <ul class="g-nav">
+                    <li><a href="#">ナビ1</a></li>
+                    <li><a href="#">ナビ2</a></li>
+                    <li><a href="#">ナビ3</a></li>
+                    <li><a href="#">ナビ4</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <pre>
+  <code>
+  </code>
+  </pre>
+    <div class="container">
+        <h1>カリー関数</h1>
+
+        <label for="">第一引数<input type="text" id="first"></label>
+        <button id="btn">押して</button>
+
+        <label for="">第二引数<input type="text" id="second"></label>
+        <button id="btn2">押して</button>
+
+        <div>
+            <pre>
+<code>
+</code>
+</pre>
+        </div>
+        <p><a href="../" class="btn">トップページへ戻る</a></p>
+    </div>
+    <footer>
+        <div class="container">
+            <address>Copyright(C)ここに年 個人名or会社名,Allright Reserved.</address>
+        </div>
+    </footer>
+</body>
+<script src="/common/js/run.js"></script>
+<script>
+    const add = (x) => (y) => {
+        return x + y;
+    }
+    let first = document.querySelector('#first');
+    let second = document.querySelector('#second');
+
+    const btn = document.querySelector('#btn');
+    const btnTwo = document.querySelector('#btn2');
+
+    function addFirst() {
+        let firstValue = first.value;
+        return firstValue;
+    }
+
+    btn.addEventListener('click', function () {
+        let firstValue = first.value;
+        const add1 = add(firstValue);
+        window.alert(add1);
+    });
+
+    btnTwo.addEventListener('click', function () {
+        let firstValue = addFirst();
+        let secondValue = second.value;
+        let add1 = add(Number(firstValue));
+        let add2 = add1(Number(secondValue));
+        window.alert(add2);
+    });
+
+
+</script>
+
+</html>

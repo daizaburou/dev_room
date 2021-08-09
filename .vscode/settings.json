@@ -1,0 +1,12 @@
+{
+    "cSpell.words": [
+      "gulpfile",
+      "mixins",
+      "mqpacker",
+      "beautify",
+    ],
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true,
+        "source.fixAll.stylelint": true
+    },
+}

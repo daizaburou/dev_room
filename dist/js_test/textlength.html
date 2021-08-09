@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>文字列の長さチェック</title>
+  <link href=".././common/css/style.css" rel="stylesheet" type="text/css">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+
+<style>
+  textarea {
+    padding: 1rem;
+  }
+</style>
+
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <ul class="g-nav">
+          <li><a href="#">ナビ1</a></li>
+          <li><a href="#">ナビ2</a></li>
+          <li><a href="#">ナビ3</a></li>
+          <li><a href="#">ナビ4</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <h1>文字列の長さチェック</h1>
+
+    <textarea name="" id="" cols="30" rows="10" class="textarea"></textarea>
+    <p>現在<span class="string_num">0</span>文字入力中です</p>
+    <button class="button">文字列チェックボタン</button>
+    <div>
+      <pre>
+<code>
+</code>
+</pre>
+    </div>
+    <p><a href="../" class="btn">トップページへ戻る</a></p>
+  </div>
+  <footer>
+    <div class="container">
+      <address>Copyright(C)ここに年 個人名or会社名,Allright Reserved.</address>
+    </div>
+  </footer>
+</body>
+<script src="/common/js/run.js"></script>
+<script>
+  let textarea = document.querySelector('.textarea');
+  let string_num = document.querySelector('.string_num');
+  let btn = document.querySelector('.button');
+  textarea.addEventListener('keyup', onKeyUp);
+
+  function onKeyUp() {
+    const inputText = textarea.value;
+    string_num.innerText = inputText.length;
+  }
+
+  btn.addEventListener('click', onClickButton);
+
+  function onClickButton() {
+    const inputText = textarea.value;
+    if (inputText.length < 10) {
+      window.alert('10文字以上で入力しろや！')
+    } else {
+      window.alert('いいね！')
+    }
+  }
+</script>
+
+</html>

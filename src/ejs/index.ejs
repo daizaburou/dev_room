@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ja">
+  <%- include('./common/_head.ejs'); %>
+<body>
+  <%- include('./common/_header.ejs'); %>
+  <div class="container">
+    <h1>JS勉強サイト</h1>
+
+    <!--#include virtual="/inc/sample.html" -->
+
+    <% const data = [3,5,7] %>
+
+    <% for(let i = 0; i < 3; i++){ %>
+      <p>indexは「<%= i %>」で、valueは「<%= data[i] %>」です</p>
+    <% } %>
+
+    <section class="recipes">
+      <article class="recipe">
+        <div>
+          <h2>文字の長さチェック</h2>
+        </div>
+        <p>テキストエリアの長さを取得して真偽チェックを加えます。</p>
+        <a href="./js_test/textlength.html" class="btn">もっと見る</a>
+      </article>
+
+      <article class="recipe">
+        <div>
+          <h2>グラデーションカラー</h2>
+        </div>
+        <p>グラデーションのカラーをランダムに決定します。</p>
+        <a href="./js_test/gradecolor.html" class="btn">もっと見る</a>
+      </article>
+
+      <article class="recipe">
+        <div>
+          <h2>クロージャ―</h2>
+        </div>
+        <p>クロージャーを使いボタンを押すたびにカウントアップします。</p>
+        <a href="./js_test/closer.html" class="btn">もっと見る</a>
+      </article>
+
+      <article class="recipe">
+        <div>
+          <h2>カリー関数</h2>
+        </div>
+        <p>カリー関数を用いて、部分適用を実装します。</p>
+        <a href="./js_test/curry.html" class="btn">もっと見る</a>
+      </article>
+
+      <article class="recipe">
+        <div>
+          <h2>文字の正誤チェック</h2>
+        </div>
+        <p>正規表現を使い、文字の正誤チェックを行います。</p>
+        <a href="./js_test/testpattern.html" class="btn">もっと見る</a>
+      </article>
+
+      <article class="recipe">
+        <div>
+          <h2>文字エンコード・デコード</h2>
+        </div>
+        <p>文字のエンコードとでコードを行います。</p>
+        <a href="./js_test/codechage.html" class="btn">もっと見る</a>
+      </article>
+
+      <article class="recipe">
+        <div>
+          <h2>filterデモ</h2>
+        </div>
+        <p>フィルターを使う方法のデモを提示します。</p>
+        <a href="./js_test/filter.html" class="btn">もっと見る</a>
+      </article>
+
+      <article class="recipe">
+        <div>
+          <h2>タイマー</h2>
+        </div>
+        <p>開いた瞬間にタイマーが作動し、0で止まります。</p>
+        <a href="./js_test/timer.html" class="btn">もっと見る</a>
+      </article>
+
+      <article class="recipe">
+        <div>
+          <h2>たんぽぽ2章</h2>
+        </div>
+        <p>ロールオーバーで画像をふわっと変化させる。<br>ついでに画像の大きさを変える</p>
+        <a href="./js_test/rollover.html" class="btn">もっと見る</a>
+      </article>
+
+      <article class="recipe">
+        <div>
+          <h2>typeof演算子</h2>
+        </div>
+        <p>「type of 演算子」を一覧表示します。</p>
+        <a href="./js_test/typeof.html" class="btn">もっと見る</a>
+      </article>
+
+      <article class="recipe">
+        <div>
+          <h2>時間をおしらせするよ</h2>
+        </div>
+        <p>現在の時刻をおしらせするよ</p>
+        <a href="./js_test/hour.html" class="btn">もっと見る</a>
+      </article>
+
+      <article class="recipe">
+        <div>
+          <h2>モーダル</h2>
+        </div>
+        <p>モーダルボタン</p>
+        <a href="./js_test/modal.html" class="btn">もっと見る</a>
+      </article>
+
+    </section>
+
+
+  </div>
+  <footer>
+    <div class="container">
+
+      <address>Copyright(C)ここに年 個人名or会社名,Allright Reserved.</address>
+    </div>
+  </footer>
+</body>
+<script src="./assets/js/run.js"></script>
+
+</html>

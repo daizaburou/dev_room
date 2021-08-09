@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ja">
+  <%- include('../common/_head.ejs'); %>
+<body>
+  <%- include('../common/_header.ejs'); %>
+  <style>
+    .hello{
+      position:fixed;
+      width:100vw;
+      height:100vh;
+      background-color:#fff;
+      opacity:1;
+      transition:all .5s;
+      display:block;
+      top:0;
+      left:0;
+    }
+    .hello.active{
+      opacity:0;
+      pointer-events:none;
+    }
+    .hello .hello--text{
+      position:absolute;
+      color:#000;
+      font-weight:bold;
+      font-size:30px;
+      top:50%;
+      left:50%;
+      transform:translate(-50% , -50%);
+    }
+
+  </style>
+  <div class="container">
+    <h1>時間をおしらせするよ</h1>
+    <!--#include virtual="/inc/sample.html" -->
+    <div class="hello">
+      <p class="hello--text">HELLO WORLD</p>
+    </div>
+      <p>今日は <span id="day"></span>日　現在の時刻は<span id="hour"></span>時です</p>
+    <div>
+    <pre>
+    <code>
+    </code>
+    </pre>
+        </div>
+
+        <p><a href="../" class="btn">トップページへ戻る</a></p>
+      </div>
+      <footer>
+        <div class="container">
+          <address>Copyright(C)ここに年 個人名or会社名,Allright Reserved.</address>
+        </div>
+      </footer>
+    </body>
+    <script src="/common/js/run.js"></script>
+    <script>
+      const days = new Date();
+      const today = days.getDate();
+      const todayHours = days.getHours();
+      const hello = document.querySelector('.hello');
+      const helloText = document.querySelector('.hello--text');
+      const hour = document.querySelector('#hour');
+      const day = document.querySelector('#day');
+      hour.innerHTML = todayHours;
+      day.innerHTML = today;
+      if(todayHours >= 6 && todayHours <= 11){
+        helloText.innerHTML = 'おはようございます。'
+      }
+      else if(todayHours >= 12 && todayHours <= 16){
+        helloText.innerHTML = 'こんにちは。'
+      }
+      else if(todayHours >= 17 && todayHours <= 24){
+        helloText.innerHTML = 'こんばんは。'
+      }
+      else{
+        helloText.innerHTML = 'こんな時間になにしてんねん。'
+      }
+      setTimeout(function(){
+        hello.classList.add('active');
+      } , 2000);
+    </script>
+
+    </html>
