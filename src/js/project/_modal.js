@@ -1,14 +1,11 @@
 export default class {
   constructor() {
-    const modalButton = document.querySelectorAll('.modal_button');
-    const modalBackground = document.querySelectorAll('.modal__background');
-    const modal = document.querySelectorAll('modal');
+    const modalButton = Array.prototype.slice.call(document.querySelectorAll('.modal__button'));
+    const modalBackground = Array.prototype.slice.call(document.querySelectorAll('.modal__background'));
     for (let modalTarget of modalButton) {
       modalTarget.addEventListener('click', () => {
         const target = modalTarget.dataset.target;
-        console.log(target);
         const targetElement = document.querySelector('#' + target);
-        console.log(targetElement);
         targetElement.classList.add('is-show');
       });
     }
