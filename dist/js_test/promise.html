@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ja">
+
+
+<head>
+  <title>JS勉強サイト</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="これはJSを勉強するためのサイトです。">
+  <link href="/assets/css/style.css" rel="stylesheet" type="text/css">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <ul class="g-nav">
+          <li><a href="#">ナビ1</a></li>
+          <li><a href="#">ナビ2</a></li>
+          <li><a href="#">ナビ3</a></li>
+          <li><a href="#">ナビ4</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <h1 class="heading-h1">Promise</h1>
+
+    <div class="text-in"></div>
+
+  </div>
+  <footer>
+    <div class="container">
+      <address>Copyright(C)ここに年 個人名or会社名,Allright Reserved.</address>
+    </div>
+  </footer>
+</body>
+<script>
+  //Pタグを作成して、text_inクラス配下に挿入
+  const createP = (text) => {
+    let p = document.createElement('p');
+    p.innerText = text;
+    document.querySelector('.text-in').appendChild(p);
+  }
+
+  //newを使ったプロミスインスタンスの作成
+  new Promise(function(resolve) {
+    resolve('Hello'); //resolveの引数の値は次のthenに渡される
+  }).then(function(value) {
+    createP(value);
+    return 'World'; //thenの中のreturnは次のthenに渡される
+  }).then(function(value) {
+    createP(value);
+  });
+
+  //asyncを指定したプロミスインスタンスの生成
+  const asyncFunc1 = () => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve('待ってる');
+      }, 2000);
+    })
+  }
+
+  async function asyncFunc2() {
+    setTimeout(() => {
+      a = '待った';
+    }, 2000);
+  }
+
+
+  const addP = async () => {
+    console.log('待ってね');
+    const a = await asyncFunc2();
+    console.log(a);
+  }
+
+  addP();
+</script>
+
+</html>

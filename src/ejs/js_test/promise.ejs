@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ja">
+  <%- include('../common/_head.ejs'); %>
+<body>
+  <%- include('../common/_header.ejs'); %>
+  <div class="container">
+    <h1 class="heading-h1">Promise</h1>
+
+    <div class="text-in"></div>
+
+  </div>
+  <footer>
+    <div class="container">
+      <address>Copyright(C)ここに年 個人名or会社名,Allright Reserved.</address>
+    </div>
+  </footer>
+</body>
+<script>
+
+  //Pタグを作成して、text_inクラス配下に挿入
+  const createP = (text) => {
+    let p = document.createElement('p');
+    p.innerText = text;
+    document.querySelector('.text-in').appendChild(p);
+  }
+
+  //newを使ったプロミスインスタンスの作成
+  new Promise(function (resolve) {
+    resolve('Hello');//resolveの引数の値は次のthenに渡される
+  }).then(function (value) {
+    createP(value);
+    return 'World';//thenの中のreturnは次のthenに渡される
+  }
+  ).then(function (value) {
+    createP(value);
+  });
+
+  //asyncを指定したプロミスインスタンスの生成
+  const asyncFunc1 = ()=>{
+    return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('待ってる');
+    }, 2000);
+  })
+  }
+
+  async function asyncFunc2 (){
+    setTimeout(() => {
+      a = '待った';
+    }, 2000);
+  }
+
+
+  const addP = async () => {
+    console.log('待ってね');
+    const a = await asyncFunc2();
+    console.log(a);
+  }
+
+  addP();
+
+</script>
+
+</html>

@@ -1,9 +1,11 @@
 body {
+  min-height: 100vh;
   font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
   color: #333;
 }
-h1 {
+.heading-h1 {
   margin-top: 1rem;
+  font-size: 40px;
 }
 a {
   color: green;
