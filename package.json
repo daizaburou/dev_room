@@ -3,11 +3,13 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "serve": "eleventy --serve",
-    "build": "rmdir /s /q dist && run-s build:*",
+    "start":"run-p start:*",
+    "start:eleventy": "eleventy --serve",
+    "start:vite": "vite build --watch",
+    "win-build": "rmdir /s /q dist && run-s build:*",
+    "mac-build": "rm -rf dist && run-s build:*",
     "build:eleventy": "eleventy",
-    "build:vite": "vite build",
-    "del:windows": "rmdir /s /q dist"
+    "build:vite": "vite build"
   },
   "devDependencies": {
     "@11ty/eleventy": "^1.0.0",
