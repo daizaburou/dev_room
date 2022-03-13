@@ -1,9 +1,10 @@
 {
     "cSpell.words": [
+      "beautify",
       "gulpfile",
       "mixins",
       "mqpacker",
-      "beautify",
+      "vite"
     ],
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true,
