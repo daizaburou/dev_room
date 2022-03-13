@@ -5,8 +5,6 @@ const Image = require("@11ty/eleventy-img");
   let stats = await Image(url, {
     widths: [300]
   });
-
-  // console.log( stats );
 })();
 
 module.exports = function (eleventyConfig) {

@@ -5,6 +5,7 @@
       "gulpfile",
       "mixins",
       "mqpacker",
+      "stylelint",
       "vite"
     ],
     "editor.codeActionsOnSave": {
