@@ -4,13 +4,16 @@
   "version": "0.0.0",
   "scripts": {
     "serve": "eleventy --serve",
-    "build": "eleventy",
-    "vite-build": "vite build"
+    "build": "rmdir /s /q dist && run-s build:*",
+    "build:eleventy": "eleventy",
+    "build:vite": "vite build",
+    "del:windows": "rmdir /s /q dist"
   },
   "devDependencies": {
     "@11ty/eleventy": "^1.0.0",
     "@11ty/eleventy-img": "^1.1.0",
     "autoprefixer": "^10.4.2",
+    "npm-run-all": "^4.1.5",
     "postcss": "^8.4.8",
     "sass": "^1.49.9",
     "vite": "^2.8.0"
