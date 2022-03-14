@@ -1,10 +1,14 @@
 <head>
-  <title>{{title : siteData.title}}</title>
+  <title>{{ siteData.title }}：{{ title }}</title>
   <meta charset="UTF-8">
-  <meta name="description" content="<%- meta.desc %>">
+  {%-  if description %}
+  <meta name="description" content="{{ description }}">
+  {%- else %}
+    <meta name="description" content="JS勉強用のサイトです。">
+  {%- endif %}
   <link href="/assets/css/style.css" rel="stylesheet" type="text/css">
 </head>
-
+<body>
 <header>
   <div class="container">
     <nav>
@@ -26,9 +30,13 @@
   </div>
 </header>
 
+<main class="main">
 {% block content %}
-  <h1>contentが宣言されない場合はこれが記述される</h1>
+
 {% endblock %}
+</main>
+
+<p><a href="/" class="btn">トップページへ戻る</a></p>
 
 <footer>
   <div class="container">
@@ -36,5 +44,5 @@
   </div>
 </footer>
 </body>
-<script src="/assets/js/run.js"></script>
+<script src="/assets/js/main.js"></script>
 </html>

@@ -1,20 +1,23 @@
 .btn {
   position: relative;
   padding-left: 1rem;
+
   &::before {
     position: absolute;
     top: 3px;
     left: 0;
     width: 0.5rem;
     height: 0.5rem;
-    content: '';
-    border-top: 1px solid rgb(9, 75, 29);
-    border-right: 1px solid rgb(9, 75, 29);
+    content: "";
+    border-top: 1px solid rgb(9 75 29);
+    border-right: 1px solid rgb(9 75 29);
     transition: all 0.3s;
     transform: rotate(45deg);
   }
+
   &:hover {
     text-decoration: underline;
+
     &::before {
       left: 3px;
     }

@@ -1,17 +1,11 @@
 .recipes {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
 }
 
 .recipe {
-  width: calc(100% / 3 - 1rem);
-  padding: 0.5rem;
-  margin-right: 0.8rem;
-  margin-bottom: 0.8rem;
-  background-color: #f0faff;
-  border-radius: 0.5rem;
-  &:nth-child(3) {
-    margin-right: 0;
-  }
+  padding: 1.5rem;
+  border-radius: 0.2rem;
+  box-shadow: 0 2px 11px 1px rgb(10 10 10 / 10%);
 }

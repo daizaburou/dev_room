@@ -1,64 +1,39 @@
-<!doctype html>
-<html lang="ja">
+---
+title: typeof演算子
+listDisplay: true
+---
+{% extends "base.njk" %}
 
-<head>
-    <meta charset="UTF-8">
-    <title>typeof演算子</title>
-    <link href=".././common/css/style.css" rel="stylesheet" type="text/css">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-</head>
-
-<style>
-</style>
-
-<body>
-    <header>
-        <div class="container">
-            <nav>
-                <ul class="g-nav">
-                    <li><a href="#">ナビ1</a></li>
-                    <li><a href="#">ナビ2</a></li>
-                    <li><a href="#">ナビ3</a></li>
-                    <li><a href="#">ナビ4</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <pre>
-  <code>
-    document.querySelector('#booleantype').innerHTML = typeof true;
-    document.querySelector('#numbertype').innerHTML = typeof 10;
-    document.querySelector('#stringtype').innerHTML = typeof '藤本';
-    document.querySelector('#nulltype').innerHTML = typeof null;
-    document.querySelector('#undefinedtype').innerHTML = typeof undefined;
-    document.querySelector('#symboltype').innerHTML = typeof Symbol();
-    document.querySelector('#arraytype').innerHTML = typeof [1, 2, 3];
-    document.querySelector('#objecttype').innerHTML = typeof {id: 10, name: '藤本'};
-    document.querySelector('#objecttype').innerHTML = typeof {id: 10, name: '藤本'};
-  </code>
+{% block content %}
+<div>
+  <pre>
+    <code>
+      document.querySelector('#booleantype').innerHTML = typeof true;
+      document.querySelector('#numbertype').innerHTML = typeof 10;
+      document.querySelector('#stringtype').innerHTML = typeof '藤本';
+      document.querySelector('#nulltype').innerHTML = typeof null;
+      document.querySelector('#undefinedtype').innerHTML = typeof undefined;
+      document.querySelector('#symboltype').innerHTML = typeof Symbol();
+      document.querySelector('#arraytype').innerHTML = typeof [1, 2, 3];
+      document.querySelector('#objecttype').innerHTML = typeof {id: 10, name: '藤本'};
+      document.querySelector('#objecttype').innerHTML = typeof {id: 10, name: '藤本'};
+    </code>
   </pre>
-    <div class="container">
-        <h1>typeof 演算子</h1>
-        <p>typeof true : <span id="booleantype"></span></p>
-        <p>typeof 10 : <span id="numbertype"></span></p>
-        <p>typeof '藤本' : <span id="stringtype"></span></p>
-        <p>typeof null : <span id="nulltype"></span></p>
-        <p>typeof undefined : <span id="undefinedtype"></span></p>
-        <p>typeof Symbol() : <span id="symboltype"></span></p>
-        <p>typeof [1, 2, 3] : <span id="arraytype"></span></p>
-        <p>typeof {id: 10, name: '藤本'} : <span id="objecttype"></span></p>
-        <div>
-        </div>
-        <p><a href="../" class="btn">トップページへ戻る</a></p>
-    </div>
-    <footer>
-        <div class="container">
-            <address>Copyright(C)ここに年 個人名or会社名,Allright Reserved.</address>
-        </div>
-    </footer>
-</body>
-<script src="/common/js/run.js"></script>
+</div>
+
+<div class="container">
+  <h1>{{title}}</h1>
+
+  <p>typeof true : <span id="booleantype"></span></p>
+  <p>typeof 10 : <span id="numbertype"></span></p>
+  <p>typeof '藤本' : <span id="stringtype"></span></p>
+  <p>typeof null : <span id="nulltype"></span></p>
+  <p>typeof undefined : <span id="undefinedtype"></span></p>
+  <p>typeof Symbol() : <span id="symboltype"></span></p>
+  <p>typeof [1, 2, 3] : <span id="arraytype"></span></p>
+  <p>typeof {id: 10, name: '藤本'} : <span id="objecttype"></span></p>
+</div>
+
 <script>
     document.querySelector('#booleantype').innerHTML = typeof true;
     document.querySelector('#numbertype').innerHTML = typeof 10;
@@ -70,5 +45,4 @@
     document.querySelector('#objecttype').innerHTML = typeof {id: 10, name: '藤本'};
     document.querySelector('#objecttype').innerHTML = typeof {id: 10, name: '藤本'};
 </script>
-
-</html>
+{% endblock %}
