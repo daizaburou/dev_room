@@ -1,3 +1,8 @@
+//コンテンツ幅
+//TODO: 変数していがリントエラーになるので、対応方針調べる
+$pc: 1200px;
+$sp: 767px;
+
 @mixin pc {
   @media (max-width: ($pc)) {
     @content;
