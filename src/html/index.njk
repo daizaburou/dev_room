@@ -6,19 +6,18 @@ title: インデックス
 
 {% block content %}
 <div class="container">
-  <h1>JS勉強サイト</h1>
-  <section class="recipes">
+  <h1 class="heading-h1">JS勉強サイト</h1>
+  <div class="banner">
   {%- for page in collections.all -%}
   {%- if page.data.listDisplay %}
-    <article class="recipe">
+    <a href="{{ page.url }}" class="banner__item">
       <div>
         <h2>{{page.data.title}}</h2>
       </div>
       <p>{{ page.data.discription }}</p>
-      <a href="{{ page.url }}" class="btn">{{page.inputPath}}</a>
-    </article>
+    </a>
   {%- endif %}
   {%- endfor -%}
-  </section>
+  </div>
 </div>
 {% endblock %}

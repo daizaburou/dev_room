@@ -5,58 +5,58 @@ listDisplay: true
 {% extends "base.njk" %}
 
 {% block content %}
-<style>
+  <style>
     .flex-cont {
-        display: flex;
-        padding: .5rem 0;
+      display: flex;
+      padding: 0.5rem 0;
     }
 
-    .flex-cont>input,
-    .flex-cont>button {
-        margin-right: .5rem;
+    .flex-cont > button,
+    .flex-cont > input {
+      margin-right: 0.5rem;
     }
 
-    .flex-cont>button {
-        width: 6rem;
+    .flex-cont > button {
+      width: 6rem;
     }
 
-    .flex-cont>p {
-        word-break: break-all;
-        width: 70%;
+    .flex-cont > p {
+      word-break: break-all;
+      width: 70%;
     }
-</style>
+  </style>
+  <h1>{{title}}</h1>
 
-    <div class="container">
-        <h1>{{title}}</h1>
+  <div class="flex-cont"><input type="text" class="encode">
+    <button class="en_btn">エンコード</button>
+    <p class="encode_change"></p>
+  </div>
 
-        <div class="flex-cont"><input type="text" class="encode"><button class="en_btn">エンコード</button>
-            <p class="encode_change"></p>
-        </div>
+  <div class="flex-cont"><input type="text" class="decode">
+    <button class="de_btn">デコード</button>
+    <p class="decode_change"></p>
+  </div>
 
-        <div class="flex-cont"><input type="text" class="decode"><button class="de_btn">デコード</button>
-            <p class="decode_change"></p>
-        </div>
+  <script>
+    const encode = document.querySelector('.encode');
+    const encodeChangeText = document.querySelector('.encode_change');
+    const encodeBtn = document.querySelector('.en_btn');
+    const decode = document.querySelector('.decode');
+    const decodeChangeText = document.querySelector('.decode_change');
+    const decodeBtn = document.querySelector('.de_btn');
 
-        <script>
-          const encode = document.querySelector('.encode');
-          const encodeChangeText = document.querySelector('.encode_change');
-          const encodeBtn = document.querySelector('.en_btn');
-          const decode = document.querySelector('.decode');
-          const decodeChangeText = document.querySelector('.decode_change');
-          const decodeBtn = document.querySelector('.de_btn');
+    encodeBtn.addEventListener('click', function () {
+      const encodeValue = encode.value;
+      const encodeText = encodeURI(encodeValue);
+      encodeChangeText.innerText = encodeText;
+    });
 
-          encodeBtn.addEventListener('click', function () {
-              const encodeValue = encode.value;
-              const encodeText = encodeURI(encodeValue);
-              encodeChangeText.innerText = encodeText;
-          });
+    decodeBtn.addEventListener('click', function () {
+      const decodeValue = decode.value;
+      const decodeText = decodeURI(decodeValue);
+      decodeChangeText.innerText = decodeText;
+    });
+  </script>
 
-          decodeBtn.addEventListener('click', function () {
-              const decodeValue = decode.value;
-              const decodeText = decodeURI(decodeValue);
-              decodeChangeText.innerText = decodeText;
-          });
-        </script>
-
-    </div>
+</div>
 {% endblock %}

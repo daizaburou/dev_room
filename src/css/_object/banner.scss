@@ -1,0 +1,24 @@
+@use "../_global/" as *;
+
+.banner {
+  display: grid;
+  gap: 1.5rem;
+  @include pc {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include sp {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.banner__item {
+  padding: 1.5rem;
+  border-radius: 0.2rem;
+  box-shadow: 0 2px 11px 1px rgb(10 10 10 / 10%);
+  transition: all 0.4s cubic-bezier(1, 0, 0, 1);
+  transform: translateY(0);
+  &:hover {
+    box-shadow: 0 0 0 0 rgb(10 10 10 / 4%);
+    transform: translateY(4px);
+  }
+}

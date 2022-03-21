@@ -2,17 +2,16 @@
   <title>{{ siteData.title }}：{{ title }}</title>
   <meta charset="UTF-8">
   {%-  if description %}
-  <meta name="description" content="{{ description }}">
+    <meta name="description" content="{{ description }}">
   {%- else %}
     <meta name="description" content="JS勉強用のサイトです。">
   {%- endif %}
   <link href="/assets/css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<header>
-  <div class="container">
-    <nav>
-      <ul class="global-nav">
+  <header class="header">
+    <nav class="global-navigation">
+      <ul class="global-navigation__inner">
         <li>
           <a href="#">ナビ1</a>
         </li>
@@ -27,24 +26,22 @@
         </li>
       </ul>
     </nav>
-  </div>
-</header>
+  </header>
 
-<main class="main">
-{% block content %}
+  <main class="main">
+    <div class="container">
+      {% block content %}{% endblock %}
+      <div class="button__wrapper">
+        <a href="/" class="button">トップページへ戻る</a>
+      </div>
+    </div>
+  </main>
 
-{% endblock %}
-</main>
-
-  <div class="container">
-    <p><a href="/" class="btn">トップページへ戻る</a></p>
-  </div>
-
-<footer>
-  <div class="container">
-    <address>Copyright(C)ここに年 個人名or会社名,Allright Reserved.</address>
-  </div>
-</footer>
+  <footer>
+    <div class="container">
+      <address>Copyright(C)ここに年 個人名or会社名,Allright Reserved.</address>
+    </div>
+  </footer>
 </body>
 <script src="/assets/js/main.js"></script>
 </html>

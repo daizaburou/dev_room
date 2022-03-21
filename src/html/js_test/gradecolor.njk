@@ -5,18 +5,17 @@ listDisplay: true
 {% extends "base.njk" %}
 
 {% block content %}
-<div class="container">
   <h1>{{title}}</h1>
 
   <style>
-  .rectangle{
-  width:100%;
-  height:calc(100vh - 50px);
-  --start:hsl(0, 100%, 50%);
-  --end:hsl(322, 100%, 50%);
-  background-image:linear-gradient(-135deg, var(--start), var(--end));
-  margin:1rem;
-  }
+    .rectangle {
+      width: 100%;
+      height: calc(100vh - 50px);
+      --start: hsl(0, 100%, 50%);
+      --end: hsl(322, 100%, 50%);
+      background-image: linear-gradient(-135deg, var(--start), var(--end));
+      margin: 1rem;
+    }
   </style>
 
   <div>
@@ -42,26 +41,26 @@ listDisplay: true
 
   <div class="rectangle"></div>
 
-  <p>
-    <a href="../" class="btn">トップページへ戻る</a>
-  </p>
+  <script>
+    const rectangle = document.querySelector('.rectangle');
 
-</div>
+    document
+      .querySelector('.button')
+      .addEventListener('click', onClickButton);
 
-<script>
-  const rectangle = document.querySelector('.rectangle');
+    function onClickButton() {
+      const randomHue = Math.trunc(Math.random() * 360);
+      const randomColorStart = 'hsl(' + randomHue + ', 100%, 50%)';
+      const randomColorEnd = 'hsl(' + (
+      randomHue + 40) + ', 800%, 20%)';
 
-  document.querySelector('.button').addEventListener('click', onClickButton);
-
-  function onClickButton(){
-    const randomHue = Math.trunc(Math.random() * 360);
-    const randomColorStart = 'hsl(' + randomHue +', 100%, 50%)';
-    const randomColorEnd = 'hsl(' + (randomHue + 40) +', 800%, 20%)';
-
-    rectangle.style.setProperty('--start', randomColorStart);
-    rectangle.style.setProperty('--end', randomColorEnd);
-  }
-</script>
-
+      rectangle
+        .style
+        .setProperty('--start', randomColorStart);
+      rectangle
+        .style
+        .setProperty('--end', randomColorEnd);
+    }
+  </script>
 
 {% endblock %}

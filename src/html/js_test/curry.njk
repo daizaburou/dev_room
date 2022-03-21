@@ -5,19 +5,17 @@ listDisplay: true
 {% extends "base.njk" %}
 
 {% block content %}
-    <div class="container">
-        <h1>{{ title }}</h1>
+  <h1>{{ title }}</h1>
 
-        <label for="">第一引数<input type="text" id="first"></label>
-        <button id="btn">押して</button>
+  <label for="">第一引数<input type="text" id="first"></label>
+  <button id="btn">押して</button>
 
-        <label for="">第二引数<input type="text" id="second"></label>
-        <button id="btn2">押して</button>
+  <label for="">第二引数<input type="text" id="second"></label>
+  <button id="btn2">押して</button>
 
-    </div>
-<script>
+  <script>
     const add = (x) => (y) => {
-        return x + y;
+      return x + y;
     }
     let first = document.querySelector('#first');
     let second = document.querySelector('#second');
@@ -26,22 +24,22 @@ listDisplay: true
     const btnTwo = document.querySelector('#btn2');
 
     function addFirst() {
-        let firstValue = first.value;
-        return firstValue;
+      let firstValue = first.value;
+      return firstValue;
     }
 
     btn.addEventListener('click', function () {
-        let firstValue = first.value;
-        const add1 = add(firstValue);
-        window.alert(add1);
+      let firstValue = first.value;
+      const add1 = add(firstValue);
+      window.alert(add1);
     });
 
     btnTwo.addEventListener('click', function () {
-        let firstValue = addFirst();
-        let secondValue = second.value;
-        let add1 = add(Number(firstValue));
-        let add2 = add1(Number(secondValue));
-        window.alert(add2);
+      let firstValue = addFirst();
+      let secondValue = second.value;
+      let add1 = add(Number(firstValue));
+      let add2 = add1(Number(secondValue));
+      window.alert(add2);
     });
-</script>
+  </script>
 {% endblock %}

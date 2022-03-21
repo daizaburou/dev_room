@@ -6,8 +6,8 @@ module.exports = {
     jquery: true,
   },
   parserOptions: {
-    sourceType: 'module',
+    sourceType: "module",
     ecmaVersion: 2021,
   },
-  extends: ['eslint:recommended', 'plugin:prettier/recommended'],
+  extends: ["eslint:recommended", "plugin:prettier/recommended"],
 };

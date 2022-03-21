@@ -1,0 +1,8 @@
+.global-navigation__inner {
+  display: grid;
+  list-style: none;
+  grid-template-columns: repeat(4,auto);
+  & > li {
+    padding: 1.2rem;
+  }
+}

@@ -5,41 +5,39 @@ listDisplay: true
 {% extends "base.njk" %}
 
 {% block content %}
-<div class="container">
   <h1>{{title}}</h1>
 
   <style>
-    .hello{
-      position:fixed;
-      width:100vw;
-      height:100vh;
-      background-color:#fff;
-      opacity:1;
-      transition:all .5s;
-      display:block;
-      top:0;
-      left:0;
+    .hello {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      background-color: #fff;
+      opacity: 1;
+      transition: all 0.5s;
+      display: block;
+      top: 0;
+      left: 0;
     }
-    .hello.active{
-      opacity:0;
-      pointer-events:none;
+    .hello.active {
+      opacity: 0;
+      pointer-events: none;
     }
-    .hello .hello--text{
-      position:absolute;
-      color:#000;
-      font-weight:bold;
-      font-size:30px;
-      top:50%;
-      left:50%;
-      transform:translate(-50% , -50%);
+    .hello .hello--text {
+      position: absolute;
+      color: #000;
+      font-weight: bold;
+      font-size: 30px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50% , -50%);
     }
   </style>
 
   <div class="hello">
     <p class="hello--text">HELLO WORLD</p>
   </div>
-    <p>今日は <span id="day"></span>日　現在の時刻は<span id="hour"></span>時です</p>
-    </div>
+  <p>今日は <span id="day"></span>日　現在の時刻は<span id="hour"></span>時です</p>
 
   <script>
     const days = new Date();
@@ -53,19 +51,21 @@ listDisplay: true
     hour.innerHTML = todayHours;
     day.innerHTML = today;
 
-    if(todayHours >= 6 && todayHours <= 11){
+    if (todayHours >= 6 && todayHours <= 11) {
       helloText.innerHTML = 'おはようございます。'
-    } else if(todayHours >= 12 && todayHours <= 16){
+    } else if (todayHours >= 12 && todayHours <= 16) {
       helloText.innerHTML = 'こんにちは。'
-    } else if(todayHours >= 17 && todayHours <= 24){
+    } else if (todayHours >= 17 && todayHours <= 24) {
       helloText.innerHTML = 'こんばんは。'
-    } else{
+    } else {
       helloText.innerHTML = 'こんな時間になにしてんねん。'
     }
 
-    setTimeout(function(){
-      hello.classList.add('active');
-    } , 2000);
+    setTimeout(function () {
+      hello
+        .classList
+        .add('active');
+    }, 2000);
   </script>
 
 {% endblock %}

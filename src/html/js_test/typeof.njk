@@ -5,8 +5,8 @@ listDisplay: true
 {% extends "base.njk" %}
 
 {% block content %}
-<div>
-  <pre>
+  <div>
+    <pre>
     <code>
       document.querySelector('#booleantype').innerHTML = typeof true;
       document.querySelector('#numbertype').innerHTML = typeof 10;
@@ -19,9 +19,8 @@ listDisplay: true
       document.querySelector('#objecttype').innerHTML = typeof {id: 10, name: '藤本'};
     </code>
   </pre>
-</div>
+  </div>
 
-<div class="container">
   <h1>{{title}}</h1>
 
   <p>typeof true : <span id="booleantype"></span></p>
@@ -32,17 +31,40 @@ listDisplay: true
   <p>typeof Symbol() : <span id="symboltype"></span></p>
   <p>typeof [1, 2, 3] : <span id="arraytype"></span></p>
   <p>typeof {id: 10, name: '藤本'} : <span id="objecttype"></span></p>
-</div>
 
-<script>
-    document.querySelector('#booleantype').innerHTML = typeof true;
-    document.querySelector('#numbertype').innerHTML = typeof 10;
-    document.querySelector('#stringtype').innerHTML = typeof '藤本';
-    document.querySelector('#nulltype').innerHTML = typeof null;
-    document.querySelector('#undefinedtype').innerHTML = typeof undefined;
-    document.querySelector('#symboltype').innerHTML = typeof Symbol();
-    document.querySelector('#arraytype').innerHTML = typeof [1, 2, 3];
-    document.querySelector('#objecttype').innerHTML = typeof {id: 10, name: '藤本'};
-    document.querySelector('#objecttype').innerHTML = typeof {id: 10, name: '藤本'};
-</script>
+  <script>
+    document
+      .querySelector('#booleantype')
+      .innerHTML = typeof true;
+    document
+      .querySelector('#numbertype')
+      .innerHTML = typeof 10;
+    document
+      .querySelector('#stringtype')
+      .innerHTML = typeof '藤本';
+    document
+      .querySelector('#nulltype')
+      .innerHTML = typeof null;
+    document
+      .querySelector('#undefinedtype')
+      .innerHTML = typeof undefined;
+    document
+      .querySelector('#symboltype')
+      .innerHTML = typeof Symbol();
+    document
+      .querySelector('#arraytype')
+      .innerHTML = typeof[1, 2, 3];
+    document
+      .querySelector('#objecttype')
+      .innerHTML = typeof {
+        id : 10,
+        name: '藤本'
+      };
+    document
+      .querySelector('#objecttype')
+      .innerHTML = typeof {
+        id : 10,
+        name: '藤本'
+      };
+  </script>
 {% endblock %}

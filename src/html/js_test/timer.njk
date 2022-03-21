@@ -5,29 +5,27 @@ listDisplay: true
 {% extends "base.njk" %}
 
 {% block content %}
-<div class="container">
   <h1>{{title}}</h1>
 
   <div class="timer">
     <div class="second"></div>
   </div>
-</div>
 
-<script>
-  const second = document.querySelector('.second');
-  const goalTime = new Date().getTime() + 15 * 1000;
+  <script>
+    const second = document.querySelector('.second');
+    const goalTime = new Date().getTime() + 15 * 1000;
 
-  update();
+    update();
 
-  function update() {
-    const current = new Date().getTime();
-    const leftTime = goalTime - current;
-    if(leftTime <= 0){
-      second.innerText = 0;
-      return false;
+    function update() {
+      const current = new Date().getTime();
+      const leftTime = goalTime - current;
+      if (leftTime <= 0) {
+        second.innerText = 0;
+        return false;
+      }
+      second.innerText = (leftTime / 1000).toFixed(2);
+      requestAnimationFrame(update);
     }
-    second.innerText = (leftTime / 1000).toFixed(2);
-  requestAnimationFrame(update);
-  }
-</script>
+  </script>
 {% endblock %}

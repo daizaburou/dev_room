@@ -1,14 +1,13 @@
 //コンテンツ幅
-$pc: 1200px;
-$sp: 767px;
+$break-point: 768px;
 
 @mixin pc {
-  @media (max-width: ($pc)) {
+  @media (min-width: $break-point) {
     @content;
   }
 }
 @mixin sp {
-  @media (max-width: ($sp)) {
+  @media (max-width: $break-point - 0.2px) {
     @content;
   }
 }

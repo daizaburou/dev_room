@@ -6,26 +6,27 @@ listDisplay: true
 {% extends "base.njk" %}
 
 {% block content %}
+  <h1>クロージャ―</h1>
 
-<div class="container">
-    <h1>クロージャ―</h1>
-<p>{{ title }}</p>
-    <p><span class="count_up">0</span>回クリックしたよ</p>
+  <p>{{ title }}</p>
 
-    <button class="button">Click me</button>
-</div>
+  <p>
+    <span class="count_up">0</span>回クリックしたよ
+</p>
 
-<script>
-  let countUp = document.querySelector('.count_up');
-  let btn = document.querySelector('.button');
-  const closer = function () {
-    let count = 0;
-    return function () {
-      count += 1;
-      countUp.innerText = count;
+  <button class="button">Click me</button>
+
+  <script>
+    let countUp = document.querySelector('.count_up');
+    let btn = document.querySelector('.button');
+    const closer = function () {
+      let count = 0;
+      return function () {
+        count += 1;
+        countUp.innerText = count;
+      }
     }
-  }
-  const closerFunc = closer();
-  btn.addEventListener('click', closerFunc);
-</script>
+    const closerFunc = closer();
+    btn.addEventListener('click', closerFunc);
+  </script>
 {% endblock %}

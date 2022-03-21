@@ -5,7 +5,6 @@ listDisplay: true
 {% extends "base.njk" %}
 
 {% block content %}
-<div class="container">
   <h1>{{title}}</h1>
 
   <h2>電話番号を入力してください</h2>
@@ -13,23 +12,21 @@ listDisplay: true
   <input id="phoneNumberText" placeholder="電話番号" type="tel">
 
   <p id="warningMessage"></p>
-</div>
 
-<script>
-  const phoneNumberText = document.querySelector('#phoneNumberText');
-  const warningMessage = document.querySelector('#warningMessage');
+  <script>
+    const phoneNumberText = document.querySelector('#phoneNumberText');
+    const warningMessage = document.querySelector('#warningMessage');
 
-  phoneNumberText.addEventListener('keyup',() =>{
-  const phoneNumber = phoneNumberText.value;
-  const trimmedPhoneNumber = phoneNumber.replace(/-/g,'');
+    phoneNumberText.addEventListener('keyup', () => {
+      const phoneNumber = phoneNumberText.value;
+      const trimmedPhoneNumber = phoneNumber.replace(/-/g, '');
 
-  if(/^[0][0-9]{9,10}$/.test(trimmedPhoneNumber) === false){
-    warningMessage.innerText = '電話番号を正しく入力してください';
-  }
-  else{
-    warningMessage.innerText = '';
-  }
-  });
-</script>
+      if (/^[0][0-9]{9,10}$/.test(trimmedPhoneNumber) === false) {
+        warningMessage.innerText = '電話番号を正しく入力してください';
+      } else {
+        warningMessage.innerText = '';
+      }
+    });
+  </script>
 
 {% endblock %}

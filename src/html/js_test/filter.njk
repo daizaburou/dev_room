@@ -5,50 +5,63 @@ listDisplay: true
 {% extends "base.njk" %}
 
 {% block content %}
-<div class="container">
-<h1>{{title}}</h1>
+  <h1>{{title}}</h1>
 
-<div class="button-wrapper">
-  <button class="button" data-age="20">20歳以上</button>
-  <button class="button" data-age="30">30歳以上</button>
-  <button class="button" data-age="40">40歳以上</button>
-</div>
-<ul class="user_list"></ul>
+  <div class="button-wrapper">
+    <button class="button" data-age="20">20歳以上</button>
+    <button class="button" data-age="30">30歳以上</button>
+    <button class="button" data-age="40">40歳以上</button>
+  </div>
+  <ul class="user_list"></ul>
 
-<script>
-const userAgeList = [
-    {name:'田中',age:18},
-    {name:'森田',age:27},
-    {name:'増本',age:32},
-    {name:'小島',age:41},
-    {name:'鳥居',age:49}
-];
+  <script>
+    const userAgeList = [
+      {
+        name: '田中',
+        age: 18
+      }, {
+        name: '森田',
+        age: 27
+      }, {
+        name: '増本',
+        age: 32
+      }, {
+        name: '小島',
+        age: 41
+      }, {
+        name: '鳥居',
+        age: 49
+      }
+    ];
 
-const buttons = document.querySelectorAll('button');
+    const buttons = document.querySelectorAll('button');
 
-buttons.forEach(function(element){
-    element.addEventListener('click',function(event){
-    onClickButton(event);
-});
-});
-
-function onClickButton (event){
-    const button = event.target;
-    const targetAge = button.dataset.age;
-    const filterdList = userAgeList.filter(
-        function(data){
-          if(data.age >= targetAge){return true;}
+    buttons.forEach(function (element) {
+      element.addEventListener('click', function (event) {
+        onClickButton(event);
+      });
     });
-    updateList(filterdList);
-}
 
-function updateList(filterdList){
-    let listHtml = '';
-    for(const data of filterdList){
-    listHtml += `<li>${data.name} : ${data.age} 歳</li>`
+    function onClickButton(event) {
+      const button = event.target;
+      const targetAge = button.dataset.age;
+      const filterdList = userAgeList.filter(function (data) {
+        if (data.age >= targetAge) {
+          return true;
+        }
+      });
+      updateList(filterdList);
     }
-    document.querySelector('.user_list').innerHTML = listHtml;
-}
-</script>
+
+    function updateList(filterdList) {
+      let listHtml = '';
+      for (const data of filterdList) {
+        listHtml += `<li>${data.name} : ${data.age} 歳</li>`
+      }
+      document
+        .querySelector('.user_list')
+        .innerHTML = listHtml;
+    }
+  </script>
 
 {% endblock %}
