@@ -3,6 +3,7 @@
       "autoplace",
       "beautify",
       "eleventy",
+      "gsap",
       "gulpfile",
       "Kaku",
       "mixins",
