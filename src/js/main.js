@@ -1,6 +1,6 @@
-import modal from "./_project/modal";
-import jquery from "./_project/jquery";
-import "./_project/gsap_demo";
+import modal from "../js_test/modal";
+import jquery from "../js_test/rollover";
+import "../js_test/gsap_demo";
 
 window.addEventListener("DOMContentLoaded", function () {
   new modal();
