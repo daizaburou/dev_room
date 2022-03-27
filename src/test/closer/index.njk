@@ -1,32 +1,14 @@
 ---
-title: クロージャ
+title: クロージャー
 description: クロージャーの実装
 listDisplay: true
 ---
 {% extends "base.njk" %}
 
 {% block content %}
-  <h1>クロージャ―</h1>
-
-  <p>{{ title }}</p>
-
+  <h1>{{ title }}</h1>
   <p>
-    <span class="count_up">0</span>回クリックしたよ
-</p>
-
-  <button class="button">Click me</button>
-
-  <script>
-    let countUp = document.querySelector('.count_up');
-    let btn = document.querySelector('.button');
-    const closer = function () {
-      let count = 0;
-      return function () {
-        count += 1;
-        countUp.innerText = count;
-      }
-    }
-    const closerFunc = closer();
-    btn.addEventListener('click', closerFunc);
-  </script>
+    <span data-count-up>0</span>回クリックしたよ
+  </p>
+  <button data-closer-button>Click me</button>
 {% endblock %}
