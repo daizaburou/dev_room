@@ -1,4 +1,11 @@
 {
+  "emmet.includeLanguages": {
+    "nunjucks": "html"
+  },
+  "[nunjucks]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "okitavera.vscode-nunjucks-formatter",
+  },
   "cSpell.words": [
     "autoplace",
     "beautify",

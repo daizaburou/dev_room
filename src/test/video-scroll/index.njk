@@ -1,0 +1,23 @@
+---
+title: スクロールした時に動画を再生
+listDisplay: true
+---
+{% extends "base.njk" %}
+
+{% block content %}
+  <style>
+    .space {
+      height: 50px;
+    }
+  </style>
+  <h1 id="trigger">{{title}}</h1>
+  <div data-scroll-pin style="height:200vh;">
+    <video src="" width="100%" data-scroll-video muted></video>
+  </div>
+
+  <div id="box" style="height:400vh">
+    <div id="pink-box" style="width:100px;height:100px; background-color:pink;"></div>
+    <div id="blue-box" style="width:100px;height:100px; background-color:blue;"></div>
+  </div>
+
+{% endblock %}
